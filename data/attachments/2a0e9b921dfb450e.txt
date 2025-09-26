@@ -1,0 +1,17 @@
+[35mDEBUG   [0m asyncio:proactor_events.py:631 Using proactor: IocpProactor
+[32mINFO    [0m root:Calculation_test.py:172 --- Starting calculation Test for S5 | RTGS | 1001-5000 | 1200 ---
+[32mINFO    [0m root:client_helper.py:8 Filling client code: DJ050
+[32mINFO    [0m root:client_helper.py:12 Selecting environment: STAGING
+[32mINFO    [0m root:client_helper.py:16 Clicking Show Detail button
+[32mINFO    [0m root:client_helper.py:30 Filling payer details from config
+[32mINFO    [0m root:Calculation_test.py:209 Clicking Pay button
+[32mINFO    [0m root:Calculation_test.py:93 Handling CASH_OTHER mode with env_prefix: E-RTGS
+[1m[31mERROR   [0m root:Calculation_test.py:117 Unknown cash mode env_prefix: E-RTGS
+[1m[31mERROR   [0m root:Calculation_test.py:251 Exception occurred during Cancel Transaction Test for DJ050: Unknown Cash Mode: E-RTGS
+Traceback (most recent call last):
+  File "C:\Users\Bhargava\Desktop\QA project\sabpaisa_pg_qa_automation\testCases\Calculation_test.py", line 215, in test_calculation_amount
+    bill_amount, conv_charges, total_amount = self._handle_payment_mode(pg, payment_mode, self.logger)
+                                              ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Bhargava\Desktop\QA project\sabpaisa_pg_qa_automation\testCases\Calculation_test.py", line 119, in _handle_payment_mode
+    raise ValueError(f"Unknown Cash Mode: {pm_data['env_prefix']}")
+ValueError: Unknown Cash Mode: E-RTGS
